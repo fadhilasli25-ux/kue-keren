@@ -202,6 +202,57 @@
         <h1>happy birthday!</h1>
         <p>Alisha</p>
     </div>
+
+	<script>
+let firstCard = null;
+let secondCard = null;
+let lock = false;
+let matched = 0;
+
+document.querySelectorAll(".card").forEach(card => {
+    card.onclick = () => {
+        if (lock || card.textContent !== "?") return;
+
+        card.textContent = card.dataset.icon;
+
+        if (!firstCard) {
+            firstCard = card;
+        } else {
+            secondCard = card;
+            lock = true;
+
+            if (firstCard.dataset.icon === secondCard.dataset.icon) {
+                matched++;
+                resetTurn();
+
+                if (matched === 2) {
+                    document.getElementById("game").style.display = "none";
+                    document.getElementById("candles").style.display = "block";
+                }
+            } else {
+                setTimeout(() => {
+                    firstCard.textContent = "?";
+                    secondCard.textContent = "?";
+                    resetTurn();
+                }, 800);
+            }
+        }
+    };
+});
+
+function resetTurn() {
+    firstCard = null;
+    secondCard = null;
+    lock = false;
+}
+
+/* TIUP LILIN */
+function blow(candle) {
+    candle.querySelectorAll(".fuego").forEach(f => {
+        f.style.display = "none";
+    });
+}
+</script>
 </body>
 
 </html>
