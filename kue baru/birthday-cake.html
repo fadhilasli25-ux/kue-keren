@@ -9,13 +9,38 @@
 </head>
 
 <body>
-    <div class="velas">
-        <div class="fuego"></div>
-        <div class="fuego"></div>
+
+<!-- MINI GAME -->
+<div id="game">
+    <h2>Cocokkan kartu dulu ya 🎮</h2>
+    <div class="cards">
+        <div class="card" data-icon="🎂">?</div>
+        <div class="card" data-icon="🎂">?</div>
+        <div class="card" data-icon="🎁">?</div>
+        <div class="card" data-icon="🎁">?</div>
+    </div>
+</div>
+
+<!-- LILIN (3 buah) -->
+<div id="candles" style="display:none;">
+    <div class="velas" onclick="blow(this)">
         <div class="fuego"></div>
         <div class="fuego"></div>
         <div class="fuego"></div>
     </div>
+
+    <div class="velas" style="left:45%;" onclick="blow(this)">
+        <div class="fuego"></div>
+        <div class="fuego"></div>
+        <div class="fuego"></div>
+    </div>
+
+    <div class="velas" style="left:55%;" onclick="blow(this)">
+        <div class="fuego"></div>
+        <div class="fuego"></div>
+        <div class="fuego"></div>
+    </div>
+</div>
     <svg id="cake" version="1.1" x="0px" y="0px" width="200px" height="500px" viewBox="0 0 200 500"
         enable-background="new 0 0 200 500" xml:space="preserve">
         <path fill="#a88679" d="M173.667-13.94c-49.298,0-102.782,0-147.334,0c-3.999,0-4-16.002,0-16.002
